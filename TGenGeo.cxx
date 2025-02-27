@@ -26,7 +26,7 @@ ClassImp(TGenGeo)
 ////////////////////////////////////////////////////////////////////////////////
 
 //_____________________________________________________________________________
- TGenGeo::TGenGeo()
+TGenGeo::TGenGeo()
 {
   // Default constructor
   // Default detectors acceptances are set.
@@ -160,7 +160,8 @@ void TGenGeo::SetDefaultAcceptances(void)
   Double_t theta_y = TMath::ATan2(0.5*diag, dist);
   // SetSpectroAcceptance(theta_x, theta_y, 0.1); //exact size. Mom_acceptance +-10%
   // SetSpectroAcceptance(0.5*theta_x, 0.5*theta_y, 0.1); //0.5* is to be tighter. Mom_acceptance +-10%
-  SetSpectroAcceptance(1.1*theta_x, 1.1*theta_y, 0.1); //1.1* is to be generous. Mom_acceptance +-10%
+  // SetSpectroAcceptance(1.1*theta_x, 1.1*theta_y, 0.1); //1.1* is to be generous. Mom_acceptance +-10%
+  SetSpectroAcceptance(1.3*theta_x, 1.3*theta_y, 0.13); //1.3* is to be generous. Mom_acceptance +-13% // by Hao
   // In geant4.
   // Crystal x,y = 20.5mm, carbon gap = 1mm, VM2000 =65e-3mm. 30X36
   // SetCaloAcceptance(324.45, 324.45, 389.34, 389.34);//exact size.
@@ -187,6 +188,7 @@ void TGenGeo::SetDefaultAcceptances(void)
   // SetSpectroAcceptanceGen(theta_x, theta_y, 0.1); //exact size. Mom_acceptance +-10%
   // SetSpectroAcceptanceGen(0.5*theta_x, 0.5*theta_y, 0.1); //0.5* is to be tighter. Mom_acceptance +-10%
   SetSpectroAcceptanceGen(1.1*theta_x, 1.1*theta_y, 0.1); //1.1* is to be generous. Mom_acceptance +-10%
+  // SetSpectroAcceptanceGen(3.*theta_x, 3.*theta_y, 0.5); //2.* is to be generous. Mom_acceptance +-50% // by Hao
 
 
 }
@@ -197,7 +199,7 @@ void TGenGeo::SetDefaultAcceptances(void)
   // Returns the radiation length of the LH2 target
 
   if(fTargDens==0.) cout<<"Target not initialized !"<<endl; 
-  return 61.28/fTargDens ; 
+  return 63.04/fTargDens ; 
 }
 
 //_____________________________________________________________________________
@@ -206,7 +208,16 @@ void TGenGeo::SetDefaultAcceptances(void)
   // Returns the radiation length of the LD2 target
 
   if(fTargDens==0.) cout<<"Target not initialized !"<<endl; 
-  return 122.4/fTargDens ; 
+  return 125.98/fTargDens ; 
+}
+
+//_____________________________________________________________________________
+ Double_t TGenGeo::AlX0(void)
+{ 
+  // Returns the radiation length of the entrance window (Aluminium) of target
+
+  if(fTargDens==0.) cout<<"Target not initialized !"<<endl; 
+  return 24.01/2.7 ; // Al radiation length in g/cm^-2/Al density
 }
 
 //_____________________________________________________________________________
@@ -232,6 +243,7 @@ void TGenGeo::SetDefaultAcceptances(void)
 
   if(Pe>pemin && Pe<pemax && Thetae>thetaemin && Thetae<thetaemax &&
      Phie>-fSpecVerAcc && Phie<fSpecVerAcc) {
+      // if(TMath::Abs(Pe-fSpecMom)/fSpecMom > 0.1) cout<<"found dp > 10%"<<endl; // check after increasing acceptance
     return kTRUE;
   }else{
     return kFALSE;
@@ -240,31 +252,32 @@ void TGenGeo::SetDefaultAcceptances(void)
 //_____________________________________________________________________________
 Bool_t TGenGeo::HitsCalo(TLorentzVector* g) 
 { 
-  // Checks if a particle falls into the defined calorimeter acceptances.
+    // Checks if a particle falls into the defined calorimeter acceptances.
 
-  //20190412(start)
-  // g->RotateY(fCaloAngle);
-  g->RotateY(-fCaloAngle);  // To change electron from the left side to the right side of the beam-line (beam direction perspective)
-  //20190412(finish)
-  Double_t ahl=-TMath::ATan(fCaloHorAccL/fCaloDist);
-  Double_t ahr= TMath::ATan(fCaloHorAccR/fCaloDist);
-  Double_t avu= TMath::ATan(fCaloVerAccU/fCaloDist);
-  Double_t avd=-TMath::ATan(fCaloVerAccD/fCaloDist);
+    //20190412(start)
+    // g->RotateY(fCaloAngle);
+    g->RotateY(-fCaloAngle);  // To change electron from the left side to the right side of the beam-line (beam direction perspective)
+    //20190412(finish)
+    Double_t ahl=-TMath::ATan(fCaloHorAccL/fCaloDist);
+    Double_t ahr= TMath::ATan(fCaloHorAccR/fCaloDist);
+    Double_t avu= TMath::ATan(fCaloVerAccU/fCaloDist);
+    Double_t avd=-TMath::ATan(fCaloVerAccD/fCaloDist);
 
-  if(TMath::ASin(g->Py()/g->E())<avu && TMath::ASin(g->Py()/g->E())>avd &&
-     TMath::ASin(g->Px()/g->E())<ahr && TMath::ASin(g->Px()/g->E())>ahl){
-    //20190412(start)
-    // g->RotateY(-fCaloAngle);//We put it back where it was!
-    g->RotateY(fCaloAngle);// To change electron from the left side to the right side of the beam-line (beam direction perspective)
-    //20190412(finish)
-    return kTRUE;
-  }else{
-    //20190412(start)
-    // g->RotateY(-fCaloAngle);//We put it back where it was!
-    g->RotateY(fCaloAngle);// To change electron from the left side to the right side of the beam-line (beam direction perspective)
-    //20190412(finish)
-    return kFALSE;
-  }
+    if(TMath::ASin(g->Py()/g->E())<avu && TMath::ASin(g->Py()/g->E())>avd &&
+        TMath::ASin(g->Px()/g->E())<ahr && TMath::ASin(g->Px()/g->E())>ahl){
+        //20190412(start)
+        // g->RotateY(-fCaloAngle);//We put it back where it was!
+        g->RotateY(fCaloAngle);// To change electron from the left side to the right side of the beam-line (beam direction perspective)
+        //20190412(finish)
+        return kTRUE;
+    }
+    else{
+        //20190412(start)
+        // g->RotateY(-fCaloAngle);//We put it back where it was!
+        g->RotateY(fCaloAngle);// To change electron from the left side to the right side of the beam-line (beam direction perspective)
+        //20190412(finish)
+        return kFALSE;
+    }
 }
 
 //_____________________________________________________________________________
@@ -315,7 +328,9 @@ Bool_t TGenGeo::HitsCalo(TLorentzVector* g)
   cout<<"Calorimeter : "<<fCaloAngle*180./TMath::Pi()<<" deg and at ";
   cout<<fCaloDist<<" cm"<<endl;
   cout<<"----"<<endl;
-  cout<<"Spectro Acceptance : "<<fSpecHorAcc*1000.<<" mrad horizontal "<<fSpecVerAcc*1000.<<" mrad vertical "<<endl;
+  // cout<<"Spectro Acceptance : "<<fSpecHorAcc*1000.<<" mrad horizontal "<<fSpecVerAcc*1000.<<" mrad vertical "<<endl;
+  // cout<<"Spectro Acceptance : "<<fSpecHorAcc*TMath::RadToDeg()<<" deg horizontal "<<fSpecVerAcc*TMath::RadToDeg()<<" deg vertical "<<endl;
+  cout<<"Spectro Acceptance : "<<(fSpecAngle-fSpecHorAcc)*TMath::RadToDeg()<<" to "<<(fSpecAngle+fSpecHorAcc)*TMath::RadToDeg()<<" deg horizontal "<<-fSpecVerAcc*TMath::RadToDeg()<<" to "<<fSpecVerAcc*TMath::RadToDeg()<<" deg vertical "<<endl;
   cout<<"Spectro Momentum Acceptance : "<<fSpecMomAcc*100<<"%"<<endl;
   cout<<"Calo Acceptance : "<<fCaloHorAccR*180./TMath::Pi()<<" deg hor R "<<fCaloHorAccL*180./TMath::Pi()<<" deg hor L "<<fCaloVerAccU*180./TMath::Pi()<<" deg ver U "<<fCaloVerAccD*180./TMath::Pi()<<" deg ver D"<<endl;
   cout<<"PA Acceptance : "<<fPAPolarAccMax*180./TMath::Pi()<<" deg pol max "<<fPAPolarAccMin*180./TMath::Pi()<<" deg pol min "<<fPAAzimAccMax*180./TMath::Pi()<<" deg azi max "<<fPAAzimAccMin*180./TMath::Pi()<<" deg azi min"<<endl;

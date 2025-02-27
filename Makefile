@@ -134,9 +134,9 @@ ifeq ($(CXX),)
 $(error $(ARCH) invalid architecture)
 endif
 
-DVCSFLAGS     = -I/afs/in2p3.fr/home/throng/clas/franck/theory/INCLUDE
-DVCSLIBS      = -L/afs/in2p3.fr/home/throng/clas/franck/theory/LIB -lmydvcs -lTHEO -lMRST -lGPDQ
-#CXXFLAGS     += $(ROOTCFLAGS) $(DVCSFLAGS)
+# DVCSFLAGS     = -I/afs/in2p3.fr/home/throng/clas/franck/theory/INCLUDE
+# DVCSLIBS      = -L/afs/in2p3.fr/home/throng/clas/franck/theory/LIB -lmydvcs -lTHEO -lMRST -lGPDQ
+# CXXFLAGS     += $(ROOTCFLAGS) $(DVCSFLAGS)
 CXXFLAGS     += $(ROOTCFLAGS)
 LIBS          = $(ROOTLIBS) $(SYSLIBS)
 GLIBS         = $(ROOTGLIBS) $(SYSLIBS)
@@ -264,7 +264,8 @@ PROGRAMS      = $(MAIN) $(MAIN3) $(MAIN4) $(MAIN5) $(MAIN6)
 
 all:            $(PROGRAMS) doc
 
-lib:            $(ROOTGLIBS) $(SLIB)
+# lib:            $(ROOTGLIBS) $(SLIB)
+lib:            $(SLIB)
 
 doc:
 	root.exe -b -q make_html.C

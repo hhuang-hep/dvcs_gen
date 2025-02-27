@@ -145,7 +145,7 @@ Double_t* TGenDVCS::Interpol_CFF(Double_t Q2, Double_t xb, Double_t t)
   Double_t tmin = -Q2*(2.*(1.-xb)*(1-TMath::Sqrt(1+eps2))+eps2)/(4.*xb*(1.-xb)+eps2);
 
   if(Q2<1||Q2>13||xb<0.1||xb>0.9||t<-3.){
-    cout<<"Kinematics (Q2,xb,t,tmin) out of range for cross-section evaluation: "<<Q2<<" "<<xb<<" "<<t<<" "<<tmin<<endl;
+    // cout<<"Kinematics (Q2,xb,t,tmin) out of range for cross-section evaluation: "<<Q2<<" "<<xb<<" "<<t<<" "<<tmin<<endl; // comment out by Hao
     return 0;
   }
 

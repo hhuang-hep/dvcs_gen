@@ -130,10 +130,13 @@ void TGenElas::IntRCAft(void)
   //electron to the left. For the elastic case, we rotate everything 180 deg.
   //here. We could have also overriden TGenBase::ComputeElectron(), but also
   //TGenBase::GenFermiIni()...
+ 
   fe->RotateZ(TMath::Pi());
   feprerad->RotateZ(TMath::Pi());
   fq->RotateZ(TMath::Pi());
   fpini->RotateZ(TMath::Pi());
+  
+
   //////////////////////////////
 
   if(!fp){

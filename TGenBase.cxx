@@ -16,6 +16,7 @@
 #endif
 
 #include "TRandom2.h"
+#include "TRandom3.h"
 
 using namespace std;
 
@@ -86,10 +87,12 @@ Bool_t           TGenBase::fgErrors = kTRUE;
     cout<<" UNKOWN TARGET!"<<endl;
     exit(1);
   }
+
+  // 0.0132 cm is the average width of the entrance of all 3 cells
   if(fTargType==0){
-    t=(fVertex->Pz()+fTargLength/2.)/PX0();
+    t=(fVertex->Pz()+fTargLength/2.)/PX0() + 0.0132/AlX0();
   }else{
-    t=(fVertex->Pz()+fTargLength/2.)/NX0();
+    t=(fVertex->Pz()+fTargLength/2.)/NX0() + 0.0132/AlX0();
   }
 
     Double_t toto=TMath::Power(fRan->Rndm(),1./(b()*t));
@@ -127,10 +130,61 @@ Bool_t           TGenBase::fgErrors = kTRUE;
 //_____________________________________________________________________________
  void TGenBase::GenerateVertex(void) 
 { 
+  // Version 1
   // Generates an uniformly distributed vertex along the target length
   // (no rastering), with offset from TGenGeo
+  // SetVertex(0.,0.,fTargLength*fRan->Rndm()-fTargLength/2.+fTargZoff);
 
-  SetVertex(0.,0.,fTargLength*fRan->Rndm()-fTargLength/2.+fTargZoff);
+  // Version 2
+  // Vertex with rasters (uniform 2x2 distribution on x-y plane)
+  // SetVertex(0.2*fRan->Rndm()-0.1, 0.2*fRan->Rndm()-0.1, fTargLength*fRan->Rndm()-fTargLength/2.+fTargZoff);
+
+  // Version 3
+  // Vertex with beam offset and rasters
+  // Beam position (-1.31 mm, 0.05 mm) on target from https://logbooks.jlab.org/entry/4254868
+
+  Double_t x_offset = -1.31*0.1; // beam offset (cm)
+  Double_t y_offset = 0.05*0.1; // beam offset (cm)
+
+  Double_t x_raster = 0.2*fRan->Rndm()-0.1; // x raster, centered at 0
+  Double_t y_raster = 0.2*fRan->Rndm()-0.1; // y raster, centered at 0
+
+  SetVertex(x_offset+x_raster, y_offset+y_raster, fTargLength*fRan->Rndm()-fTargLength/2.+fTargZoff);
+  
+  // Version 4
+  // Vertex with beam offset, beam width and rasters
+  // Beam position (-1.31 mm, 0.05 mm) on target from https://logbooks.jlab.org/entry/4254868
+  // Beam width (0.5481 mm, 0.1586 mm) (sigma from harp scan) from https://logbooks.jlab.org/entry/4254747
+  
+  // TRandom3 *r = new TRandom3(0);
+
+  // Double_t x_offset = r->Gaus(-1.31*0.1, 0.5481*0.1); // randomly generate Vx based on the beam offset and width (cm)
+  // Double_t y_offset = r->Gaus(0.05*0.1, 0.1586*0.1); // randomly generate Vy based on the beam offset and width (cm)
+
+  // Double_t x_raster = 0.2*fRan->Rndm()-0.1; // x raster, centered at 0
+  // Double_t y_raster = 0.2*fRan->Rndm()-0.1; // y raster, centered at 0
+
+  // SetVertex(x_offset+x_raster, y_offset+y_raster, fTargLength*fRan->Rndm()-fTargLength/2.+fTargZoff);
+
+  // Version 5
+  // A different way to generate the vertex with beam offset, beam width and rasters
+  // The beam positions are generated with rasters first, then smeared by beam width
+  // Beam position (-1.31 mm, 0.05 mm) on target from https://logbooks.jlab.org/entry/4254868
+  // Beam width (0.5481 mm, 0.1586 mm) (sigma from harp scan) from https://logbooks.jlab.org/entry/4254747
+  
+  // TRandom3 *r = new TRandom3(0);
+
+  // Double_t x_offset = -1.31*0.1; // mm
+  // Double_t y_offset = 0.05*0.1; // mm
+
+  // Double_t x_raster = 0.2*fRan->Rndm()-0.1; // x raster, centered at 0
+  // Double_t y_raster = 0.2*fRan->Rndm()-0.1; // y raster, centered at 0
+
+  // Double_t x = r->Gaus((x_offset+x_raster), 0.5481*0.1); // randomly generate Vx based on the beam offset and width (cm)
+  // Double_t y = r->Gaus((y_offset+y_raster), 0.1586*0.1); // randomly generate Vy based on the beam offset and width (cm)
+  // Double_t z = fTargLength*fRan->Rndm()-fTargLength/2.+fTargZoff;
+
+  // SetVertex(x, y, z);
 }
 
 //_____________________________________________________________________________
@@ -362,14 +416,16 @@ TVector3* TGenBase::GetVertex(void)
     //20190226(start)
     // fq->RotateZ(TMath::Pi());//20190226 added. To change electron from the left side to the right side of the beam-line (beam direction perspective) //20190412. No need. Automatically rotated from fe->RotateZ(TMath::Pi())
     //20190226(finish)   
-  }else{
+  }
+  
+  else{
     fq->SetPxPyPzE(feini->Px()-fe->Px(),feini->Py()-fe->Py(),feini->Pz()-fe->Pz(),feini->E()-fe->E());
     //20190226(start)
     // fq->RotateZ(TMath::Pi());//20190226 added. To change electron from the left side to the right side of the beam-line (beam direction perspective) //20190412. No need. Automatically rotated from fe->RotateZ(TMath::Pi())
-    //20190226(finish)   
+    //20190226(finish)
   }
 
-  if(feini->E()<fe->E()) {success=0;} 
+  if(feini->E() < fe->E()) {success=0;} 
   else {success=1;}
 
   return success;

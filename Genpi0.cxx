@@ -50,12 +50,12 @@ int main(int argc, char *argv[])
     //gEv->GenFermiIni();//To use if fFermi is set
     /////////////////////
     if(gEv->ComputeElectron()){//Compute the scattered electron 4-vector
-      gEv->IntRCAft();//Internal radiative corrections (after vertex)
-      if(gEv->HitsSpectro(gEv->GetScatteredElectron())){//Check hor spectro accep.
-        gEv->ComputePi0();//Compute the gamma*p->gamma p collision
-	gEv->TwoBodyDecay(0.1349766,0.,0.);
-        gEv->ApplySpecVerAcc();//Rotates all final vectors around the beam axis
-        if( (gEv->HitsCalo(gEv->GetFinalPhoton1())) || (gEv->HitsCalo(gEv->GetFinalPhoton2()))){//Checks calo acceptance
+        gEv->IntRCAft();//Internal radiative corrections (after vertex)
+        if(gEv->HitsSpectro(gEv->GetScatteredElectron())){//Check hor spectro accep.
+            gEv->ComputePi0();//Compute the gamma*p->gamma p collision
+	          gEv->TwoBodyDecay(0.1349766,0.,0.);
+            gEv->ApplySpecVerAcc();//Rotates all final vectors around the beam axis
+            if( (gEv->HitsCalo(gEv->GetFinalPhoton1())) || (gEv->HitsCalo(gEv->GetFinalPhoton2()))){//Checks calo acceptance
 	  //          gEv->XSec();
           j++;
           gEv->Write2File();//This writes the event in a temporary file
@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
   }
   cout<<"j="<<j<<endl;
 
-  gEv->DumpFinalFile("outpi0.txt",nev,j);
+  gEv->DumpFinalFile("outpi0_1572.txt",nev,j);
 
   return 0;
 }

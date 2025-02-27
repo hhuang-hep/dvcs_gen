@@ -4,7 +4,7 @@
 <!--                                             -->
 <!-- Author: ROOT team (rootdev@cern.ch)         -->
 <!--                                             -->
-<!--   Date: Thu Aug 21 15:09:54 2014            -->
+<!--   Date: Wed Jan 22 13:35:54 2025            -->
 <!--                                             -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
@@ -17,7 +17,7 @@
 <script type="text/javascript" src="ROOT.js"></script>
 </head>
 <body  onload="javascript:SetValuesFromCookie();"><div id="body_content">
-<div id="root_header"><img src="http://root.cern.ch/drupal/sites/default/files/rootdrawing-logo.png" alt="ROOT logo"/></div>
+<div id="root_header"></div>
 <a name="TopOfPage"></a>
 <script type="text/javascript">WriteFollowPageBox('class TGenElas','','TGenElas.h');</script>
 <div id="toplinks">
@@ -70,17 +70,17 @@ return false;}
 <h2><a id="TGenElas:Function_Members"></a>Function Members (Methods)</h2>
 <div class="access" id="funcpubl"><b>public:</b>
 <table class="func" id="tabfuncpubl" cellspacing="0">
-<tr class="func"><td class="funcret"></td><td class="funcname"><a class="funcname" href="#TGenElas:TGenElas@1">TGenElas</a>(<span class="keyword">const</span> <a href="./TGenElas.html">TGenElas</a>&amp;)</td></tr>
-<tr class="func"><td class="funcret"></td><td class="funcname"><a class="funcname" href="#TGenElas:TGenElas">TGenElas</a>(<a href="./ListOfTypes.html#Double_t">Double_t</a> Ebeam, <a href="./ListOfTypes.html#Int_t">Int_t</a> TargType, <a href="./ListOfTypes.html#UInt_t">UInt_t</a> seed1 = 1, <a href="./ListOfTypes.html#UInt_t">UInt_t</a> seed2 = 2)</td></tr>
 <tr class="func"><td class="funcret"> virtual</td><td class="funcname"><a class="funcname" href="#TGenElas:_TGenElas">~TGenElas</a>()</td></tr>
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:AbstractMethod"><span class="baseclass">TObject::</span>AbstractMethod</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method) <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret">static <a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="funcname"><a class="funcname" href="./TGenGeo.html#TGenGeo:Alpha"><span class="baseclass">TGenGeo::</span>Alpha</a>()</td></tr>
+<tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="funcname"><a class="funcname" href="./TGenGeo.html#TGenGeo:AlX0"><span class="baseclass">TGenGeo::</span>AlX0</a>()</td></tr>
 <tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:AppendPad"><span class="baseclass">TObject::</span>AppendPad</a>(<a href="./ListOfTypes.html#Option_t">Option_t</a>* option = <span class="string">""</span>)</td></tr>
 <tr class="func"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TGenElas:ApplySpecVerAcc">ApplySpecVerAcc</a>(<a href="./ListOfTypes.html#Double_t">Double_t</a> aav = -1.)</td></tr>
 <tr class="func"><td class="funcret"><a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="funcname"><a class="funcname" href="#TGenElas:ArringE">ArringE</a>(<a href="./ListOfTypes.html#Double_t">Double_t</a>)</td></tr>
 <tr class="func"><td class="funcret"><a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="funcname"><a class="funcname" href="#TGenElas:ArringM">ArringM</a>(<a href="./ListOfTypes.html#Double_t">Double_t</a>)</td></tr>
 <tr class="funcinh"><td class="funcret">static <a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="funcname"><a class="funcname" href="./TGenGeo.html#TGenGeo:b"><span class="baseclass">TGenGeo::</span>b</a>()</td></tr>
 <tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Browse"><span class="baseclass">TObject::</span>Browse</a>(TBrowser* <a href="./TGenGeo.html#TGenGeo:b" title="Double_t TGenGeo::b()">b</a>)</td></tr>
+<tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#ULong_t">ULong_t</a></td><td class="funcname"><a class="funcname" href="#TObject:CheckedHash"><span class="baseclass">TObject::</span>CheckedHash</a>()</td></tr>
 <tr class="func"><td class="funcret">static TClass*</td><td class="funcname"><a class="funcname" href="#TGenElas:Class">Class</a>()</td></tr>
 <tr class="funcinh"><td class="funcret">virtual <span class="keyword">const</span> <span class="keyword">char</span>*</td><td class="funcname"><a class="funcname" href="#TObject:ClassName"><span class="baseclass">TObject::</span>ClassName</a>() <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="./TGenBase.html#TGenBase:Clear"><span class="baseclass">TGenBase::</span>Clear</a>(<span class="keyword">char</span>* opt = <span class="string">""</span>)</td></tr>
@@ -98,12 +98,12 @@ return false;}
 <tr class="funcinh"><td class="funcret">virtual <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>*</td><td class="funcname"><a class="funcname" href="#TObject:DrawClone"><span class="baseclass">TObject::</span>DrawClone</a>(<a href="./ListOfTypes.html#Option_t">Option_t</a>* option = <span class="string">""</span>) <span class="keyword">const</span><span class="funcprop"><abbr title="has a popup menu entry">MENU</abbr> </span></td></tr>
 <tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Dump"><span class="baseclass">TObject::</span>Dump</a>() <span class="keyword">const</span><span class="funcprop"><abbr title="has a popup menu entry">MENU</abbr> </span></td></tr>
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="./TGenBase.html#TGenBase:DumpFinalFile"><span class="baseclass">TGenBase::</span>DumpFinalFile</a>(<span class="keyword">char</span>* finalfile, <a href="./ListOfTypes.html#Int_t">Int_t</a> Ngen, <a href="./ListOfTypes.html#Int_t">Int_t</a> Nacc)</td></tr>
-<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Error"><span class="baseclass">TObject::</span>Error</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method, <span class="keyword">const</span> <span class="keyword">char</span>* msgfmt) <span class="keyword">const</span></td></tr>
-<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Execute"><span class="baseclass">TObject::</span>Execute</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method, <span class="keyword">const</span> <span class="keyword">char</span>* params, <a href="./ListOfTypes.html#Int_t">Int_t</a>* error = 0)</td></tr>
-<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Execute@1"><span class="baseclass">TObject::</span>Execute</a>(TMethod* method, TObjArray* params, <a href="./ListOfTypes.html#Int_t">Int_t</a>* error = 0)</td></tr>
+<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Error"><span class="baseclass">TObject::</span>Error</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method, <span class="keyword">const</span> <span class="keyword">char</span>* msgfmt,...) <span class="keyword">const</span></td></tr>
+<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Execute"><span class="baseclass">TObject::</span>Execute</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method, <span class="keyword">const</span> <span class="keyword">char</span>* params, <a href="./ListOfTypes.html#Int_t">Int_t</a>* error = nullptr)</td></tr>
+<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Execute@1"><span class="baseclass">TObject::</span>Execute</a>(TMethod* method, TObjArray* params, <a href="./ListOfTypes.html#Int_t">Int_t</a>* error = nullptr)</td></tr>
 <tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:ExecuteEvent"><span class="baseclass">TObject::</span>ExecuteEvent</a>(<a href="./ListOfTypes.html#Int_t">Int_t</a> event, <a href="./ListOfTypes.html#Int_t">Int_t</a> px, <a href="./ListOfTypes.html#Int_t">Int_t</a> py)</td></tr>
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="./TGenBase.html#TGenBase:ExtBrem"><span class="baseclass">TGenBase::</span>ExtBrem</a>()</td></tr>
-<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Fatal"><span class="baseclass">TObject::</span>Fatal</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method, <span class="keyword">const</span> <span class="keyword">char</span>* msgfmt) <span class="keyword">const</span></td></tr>
+<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Fatal"><span class="baseclass">TObject::</span>Fatal</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method, <span class="keyword">const</span> <span class="keyword">char</span>* msgfmt,...) <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret">virtual <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>*</td><td class="funcname"><a class="funcname" href="#TObject:FindObject"><span class="baseclass">TObject::</span>FindObject</a>(<span class="keyword">const</span> <span class="keyword">char</span>* name) <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret">virtual <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>*</td><td class="funcname"><a class="funcname" href="#TObject:FindObject@1"><span class="baseclass">TObject::</span>FindObject</a>(<span class="keyword">const</span> <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>* obj) <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="./TGenBase.html#TGenBase:GenerateVertex"><span class="baseclass">TGenBase::</span>GenerateVertex</a>()</td></tr>
@@ -115,7 +115,7 @@ return false;}
 <tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="funcname"><a class="funcname" href="./TGenGeo.html#TGenGeo:GetCaloAngle"><span class="baseclass">TGenGeo::</span>GetCaloAngle</a>()</td></tr>
 <tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="funcname"><a class="funcname" href="./TGenGeo.html#TGenGeo:GetCaloDistance"><span class="baseclass">TGenGeo::</span>GetCaloDistance</a>()</td></tr>
 <tr class="funcinh"><td class="funcret">virtual <a href="./ListOfTypes.html#Option_t">Option_t</a>*</td><td class="funcname"><a class="funcname" href="#TObject:GetDrawOption"><span class="baseclass">TObject::</span>GetDrawOption</a>() <span class="keyword">const</span></td></tr>
-<tr class="funcinh"><td class="funcret">static <a href="./ListOfTypes.html#Long_t">Long_t</a></td><td class="funcname"><a class="funcname" href="#TObject:GetDtorOnly"><span class="baseclass">TObject::</span>GetDtorOnly</a>()</td></tr>
+<tr class="funcinh"><td class="funcret">static <a href="./ListOfTypes.html#Longptr_t">Longptr_t</a></td><td class="funcname"><a class="funcname" href="#TObject:GetDtorOnly"><span class="baseclass">TObject::</span>GetDtorOnly</a>()</td></tr>
 <tr class="func"><td class="funcret">TLorentzVector*</td><td class="funcname"><a class="funcname" href="#TGenElas:GetFinalProton">GetFinalProton</a>()</td></tr>
 <tr class="funcinh"><td class="funcret">virtual <span class="keyword">const</span> <span class="keyword">char</span>*</td><td class="funcname"><a class="funcname" href="#TObject:GetIconName"><span class="baseclass">TObject::</span>GetIconName</a>() <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret">TLorentzVector*</td><td class="funcname"><a class="funcname" href="./TGenBase.html#TGenBase:GetInitialElectron"><span class="baseclass">TGenBase::</span>GetInitialElectron</a>()</td></tr>
@@ -136,10 +136,11 @@ return false;}
 <tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="funcname"><a class="funcname" href="./TGenBase.html#TGenBase:GetXb"><span class="baseclass">TGenBase::</span>GetXb</a>()</td></tr>
 <tr class="funcinh"><td class="funcret">virtual <a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="#TObject:HandleTimer"><span class="baseclass">TObject::</span>HandleTimer</a>(TTimer* timer)</td></tr>
 <tr class="funcinh"><td class="funcret">virtual <a href="./ListOfTypes.html#ULong_t">ULong_t</a></td><td class="funcname"><a class="funcname" href="#TObject:Hash"><span class="baseclass">TObject::</span>Hash</a>() <span class="keyword">const</span></td></tr>
+<tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="#TObject:HasInconsistentHash"><span class="baseclass">TObject::</span>HasInconsistentHash</a>() <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="./TGenGeo.html#TGenGeo:HitsCalo"><span class="baseclass">TGenGeo::</span>HitsCalo</a>(TLorentzVector* g)</td></tr>
 <tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="./TGenGeo.html#TGenGeo:HitsPA"><span class="baseclass">TGenGeo::</span>HitsPA</a>(TLorentzVector* p)</td></tr>
 <tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="./TGenGeo.html#TGenGeo:HitsSpectro"><span class="baseclass">TGenGeo::</span>HitsSpectro</a>(TLorentzVector* e)</td></tr>
-<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Info"><span class="baseclass">TObject::</span>Info</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method, <span class="keyword">const</span> <span class="keyword">char</span>* msgfmt) <span class="keyword">const</span></td></tr>
+<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Info"><span class="baseclass">TObject::</span>Info</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method, <span class="keyword">const</span> <span class="keyword">char</span>* msgfmt,...) <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret">virtual <a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="#TObject:InheritsFrom"><span class="baseclass">TObject::</span>InheritsFrom</a>(<span class="keyword">const</span> <span class="keyword">char</span>* classname) <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret">virtual <a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="#TObject:InheritsFrom@1"><span class="baseclass">TObject::</span>InheritsFrom</a>(<span class="keyword">const</span> TClass* cl) <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="./TGenBase.html#TGenBase:Init"><span class="baseclass">TGenBase::</span>Init</a>()</td></tr>
@@ -148,6 +149,7 @@ return false;}
 <tr class="func"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TGenElas:IntRCBef">IntRCBef</a>()</td></tr>
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:InvertBit"><span class="baseclass">TObject::</span>InvertBit</a>(<a href="./ListOfTypes.html#UInt_t">UInt_t</a> f)</td></tr>
 <tr class="func"><td class="funcret">virtual TClass*</td><td class="funcname"><a class="funcname" href="#TGenElas:IsA">IsA</a>() <span class="keyword">const</span></td></tr>
+<tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="#TObject:IsDestructed"><span class="baseclass">TObject::</span>IsDestructed</a>() <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret">virtual <a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="#TObject:IsEqual"><span class="baseclass">TObject::</span>IsEqual</a>(<span class="keyword">const</span> <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>* obj) <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret">virtual <a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="#TObject:IsFolder"><span class="baseclass">TObject::</span>IsFolder</a>() <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="#TObject:IsOnHeap"><span class="baseclass">TObject::</span>IsOnHeap</a>() <span class="keyword">const</span></td></tr>
@@ -161,10 +163,10 @@ return false;}
 <tr class="funcinh"><td class="funcret">virtual <a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="#TObject:Notify"><span class="baseclass">TObject::</span>Notify</a>()</td></tr>
 <tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="funcname"><a class="funcname" href="./TGenGeo.html#TGenGeo:NX0"><span class="baseclass">TGenGeo::</span>NX0</a>()</td></tr>
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Obsolete"><span class="baseclass">TObject::</span>Obsolete</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method, <span class="keyword">const</span> <span class="keyword">char</span>* asOfVers, <span class="keyword">const</span> <span class="keyword">char</span>* removedFromVers) <span class="keyword">const</span></td></tr>
-<tr class="funcinh"><td class="funcret">static <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:operator_delete"><span class="baseclass">TObject::</span>operator delete</a>(<span class="keyword">void</span>* ptr)</td></tr>
-<tr class="funcinh"><td class="funcret">static <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:operator_delete@1"><span class="baseclass">TObject::</span>operator delete</a>(<span class="keyword">void</span>* ptr, <span class="keyword">void</span>* vp)</td></tr>
-<tr class="funcinh"><td class="funcret">static <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:operator_delete[]"><span class="baseclass">TObject::</span>operator delete[]</a>(<span class="keyword">void</span>* ptr)</td></tr>
-<tr class="funcinh"><td class="funcret">static <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:operator_delete[]@1"><span class="baseclass">TObject::</span>operator delete[]</a>(<span class="keyword">void</span>* ptr, <span class="keyword">void</span>* vp)</td></tr>
+<tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:operator_delete"><span class="baseclass">TObject::</span>operator delete</a>(<span class="keyword">void</span>* ptr)</td></tr>
+<tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:operator_delete@1"><span class="baseclass">TObject::</span>operator delete</a>(<span class="keyword">void</span>* ptr, <span class="keyword">void</span>* vp)</td></tr>
+<tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:operator_delete[]"><span class="baseclass">TObject::</span>operator delete[]</a>(<span class="keyword">void</span>* ptr)</td></tr>
+<tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:operator_delete[]@1"><span class="baseclass">TObject::</span>operator delete[]</a>(<span class="keyword">void</span>* ptr, <span class="keyword">void</span>* vp)</td></tr>
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span>*</td><td class="funcname"><a class="funcname" href="#TObject:operator_new"><span class="baseclass">TObject::</span>operator new</a>(<a href="./ListOfTypes.html#size_t">size_t</a> sz)</td></tr>
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span>*</td><td class="funcname"><a class="funcname" href="#TObject:operator_new@1"><span class="baseclass">TObject::</span>operator new</a>(<a href="./ListOfTypes.html#size_t">size_t</a> sz, <span class="keyword">void</span>* vp)</td></tr>
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span>*</td><td class="funcname"><a class="funcname" href="#TObject:operator_new[]"><span class="baseclass">TObject::</span>operator new[]</a>(<a href="./ListOfTypes.html#size_t">size_t</a> sz)</td></tr>
@@ -208,16 +210,18 @@ return false;}
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="./TGenBase.html#TGenBase:SetVertex"><span class="baseclass">TGenBase::</span>SetVertex</a>(<a href="./ListOfTypes.html#Double_t">Double_t</a> x, <a href="./ListOfTypes.html#Double_t">Double_t</a> y, <a href="./ListOfTypes.html#Double_t">Double_t</a> z)</td></tr>
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="./TGenBase.html#TGenBase:SetWarnings"><span class="baseclass">TGenBase::</span>SetWarnings</a>(<a href="./ListOfTypes.html#Bool_t">Bool_t</a> val)</td></tr>
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="./TGenBase.html#TGenBase:SetXb"><span class="baseclass">TGenBase::</span>SetXb</a>(<a href="./ListOfTypes.html#Double_t">Double_t</a> xb)</td></tr>
-<tr class="func"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TGenElas:ShowMembers">ShowMembers</a>(TMemberInspector&amp;)</td></tr>
+<tr class="func"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TGenElas:ShowMembers">ShowMembers</a>(TMemberInspector&amp; insp) <span class="keyword">const</span></td></tr>
 <tr class="func"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TGenElas:Streamer">Streamer</a>(TBuffer&amp;)</td></tr>
 <tr class="func"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TGenElas:StreamerNVirtual">StreamerNVirtual</a>(TBuffer&amp; ClassDef_StreamerNVirtual_b)</td></tr>
-<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:SysError"><span class="baseclass">TObject::</span>SysError</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method, <span class="keyword">const</span> <span class="keyword">char</span>* msgfmt) <span class="keyword">const</span></td></tr>
+<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:SysError"><span class="baseclass">TObject::</span>SysError</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method, <span class="keyword">const</span> <span class="keyword">char</span>* msgfmt,...) <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="#TObject:TestBit"><span class="baseclass">TObject::</span>TestBit</a>(<a href="./ListOfTypes.html#UInt_t">UInt_t</a> f) <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret"><a href="./ListOfTypes.html#Int_t">Int_t</a></td><td class="funcname"><a class="funcname" href="#TObject:TestBits"><span class="baseclass">TObject::</span>TestBits</a>(<a href="./ListOfTypes.html#UInt_t">UInt_t</a> f) <span class="keyword">const</span></td></tr>
+<tr class="func"><td class="funcret"></td><td class="funcname"><a class="funcname" href="#TGenElas:TGenElas@1">TGenElas</a>(<span class="keyword">const</span> <a href="./TGenElas.html">TGenElas</a>&amp;)</td></tr>
+<tr class="func"><td class="funcret"></td><td class="funcname"><a class="funcname" href="#TGenElas:TGenElas">TGenElas</a>(<a href="./ListOfTypes.html#Double_t">Double_t</a> Ebeam, <a href="./ListOfTypes.html#Int_t">Int_t</a> TargType, <a href="./ListOfTypes.html#UInt_t">UInt_t</a> seed1 = 1, <a href="./ListOfTypes.html#UInt_t">UInt_t</a> seed2 = 2)</td></tr>
 <tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:UseCurrentStyle"><span class="baseclass">TObject::</span>UseCurrentStyle</a>()</td></tr>
-<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Warning"><span class="baseclass">TObject::</span>Warning</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method, <span class="keyword">const</span> <span class="keyword">char</span>* msgfmt) <span class="keyword">const</span></td></tr>
-<tr class="funcinh"><td class="funcret">virtual <a href="./ListOfTypes.html#Int_t">Int_t</a></td><td class="funcname"><a class="funcname" href="#TObject:Write"><span class="baseclass">TObject::</span>Write</a>(<span class="keyword">const</span> <span class="keyword">char</span>* name = 0, <a href="./ListOfTypes.html#Int_t">Int_t</a> option = 0, <a href="./ListOfTypes.html#Int_t">Int_t</a> bufsize = 0)</td></tr>
-<tr class="funcinh"><td class="funcret">virtual <a href="./ListOfTypes.html#Int_t">Int_t</a></td><td class="funcname"><a class="funcname" href="#TObject:Write@1"><span class="baseclass">TObject::</span>Write</a>(<span class="keyword">const</span> <span class="keyword">char</span>* name = 0, <a href="./ListOfTypes.html#Int_t">Int_t</a> option = 0, <a href="./ListOfTypes.html#Int_t">Int_t</a> bufsize = 0) <span class="keyword">const</span></td></tr>
+<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:Warning"><span class="baseclass">TObject::</span>Warning</a>(<span class="keyword">const</span> <span class="keyword">char</span>* method, <span class="keyword">const</span> <span class="keyword">char</span>* msgfmt,...) <span class="keyword">const</span></td></tr>
+<tr class="funcinh"><td class="funcret">virtual <a href="./ListOfTypes.html#Int_t">Int_t</a></td><td class="funcname"><a class="funcname" href="#TObject:Write"><span class="baseclass">TObject::</span>Write</a>(<span class="keyword">const</span> <span class="keyword">char</span>* name = nullptr, <a href="./ListOfTypes.html#Int_t">Int_t</a> option = 0, <a href="./ListOfTypes.html#Int_t">Int_t</a> bufsize = 0)</td></tr>
+<tr class="funcinh"><td class="funcret">virtual <a href="./ListOfTypes.html#Int_t">Int_t</a></td><td class="funcname"><a class="funcname" href="#TObject:Write@1"><span class="baseclass">TObject::</span>Write</a>(<span class="keyword">const</span> <span class="keyword">char</span>* name = nullptr, <a href="./ListOfTypes.html#Int_t">Int_t</a> option = 0, <a href="./ListOfTypes.html#Int_t">Int_t</a> bufsize = 0) <span class="keyword">const</span></td></tr>
 <tr class="func"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TGenElas:Write2File">Write2File</a>()</td></tr>
 <tr class="func"><td class="funcret"><a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="funcname"><a class="funcname" href="#TGenElas:XSec">XSec</a>()</td></tr>
 <tr class="func"><td class="funcret"><a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="funcname"><a class="funcname" href="#TGenElas:XSecArrington">XSecArrington</a>()</td></tr>
@@ -228,33 +232,37 @@ return false;}
 </table></div>
 <div class="access" id="funcprot"><b>protected:</b>
 <table class="func" id="tabfuncprot" cellspacing="0">
-<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:DoError"><span class="baseclass">TObject::</span>DoError</a>(<span class="keyword">int</span> level, <span class="keyword">const</span> <span class="keyword">char</span>* location, <span class="keyword">const</span> <span class="keyword">char</span>* fmt, va_list va) <span class="keyword">const</span></td></tr>
+<tr class="funcinh"><td class="funcret">virtual <span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:DoError"><span class="baseclass">TObject::</span>DoError</a>(<span class="keyword">int</span> level, <span class="keyword">const</span> <span class="keyword">char</span>* location, <span class="keyword">const</span> <span class="keyword">char</span>* fmt, <a href="./ListOfTypes.html#va_list">va_list</a> va) <span class="keyword">const</span></td></tr>
 <tr class="funcinh"><td class="funcret"><span class="keyword">void</span></td><td class="funcname"><a class="funcname" href="#TObject:MakeZombie"><span class="baseclass">TObject::</span>MakeZombie</a>()</td></tr>
+
+</table></div>
+<div class="access" id="funcpriv"><b>private:</b>
+<table class="func" id="tabfuncpriv" cellspacing="0">
+<tr class="func"><td class="funcret">virtual <a href="./ListOfTypes.html#Bool_t">Bool_t</a></td><td class="funcname"><a class="funcname" href="#TGenElas:CheckTObjectHashConsistency">CheckTObjectHashConsistency</a>() <span class="keyword">const</span></td></tr>
 
 </table></div>
 </div>
 
 <div id="datamembers">
 <h2><a name="TGenElas:Data_Members"></a>Data Members</h2>
-<div class="access" id="enumpubl"><b>public:</b>
-<table class="data" id="tabenumpubl" cellspacing="0">
-<tr class="datainh"><td class="datatype">enum <span class="baseclass">TObject::</span>EStatusBits { </td><td class="dataname"><a href="#TObject:kCanDelete">kCanDelete</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype"></td><td class="dataname"><a href="#TObject:kMustCleanup">kMustCleanup</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype"></td><td class="dataname"><a href="#TObject:kObjInCanvas">kObjInCanvas</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype"></td><td class="dataname"><a href="#TObject:kIsReferenced">kIsReferenced</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype"></td><td class="dataname"><a href="#TObject:kHasUUID">kHasUUID</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype"></td><td class="dataname"><a href="#TObject:kCannotPick">kCannotPick</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype"></td><td class="dataname"><a href="#TObject:kNoContextMenu">kNoContextMenu</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype"></td><td class="dataname"><a href="#TObject:kInvalidObject">kInvalidObject</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype">};</td><td></td><td></td></tr>
-<tr class="datainh"><td class="datatype">enum <span class="baseclass">TObject::</span><i>[unnamed]</i> { </td><td class="dataname"><a href="#TObject:kIsOnHeap">kIsOnHeap</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype"></td><td class="dataname"><a href="#TObject:kNotDeleted">kNotDeleted</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype"></td><td class="dataname"><a href="#TObject:kZombie">kZombie</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype"></td><td class="dataname"><a href="#TObject:kBitMask">kBitMask</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype"></td><td class="dataname"><a href="#TObject:kSingleKey">kSingleKey</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype"></td><td class="dataname"><a href="#TObject:kOverwrite">kOverwrite</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype"></td><td class="dataname"><a href="#TObject:kWriteDelete">kWriteDelete</a></td><td></td></tr>
-<tr class="datainh"><td class="datatype">};</td><td></td><td></td></tr>
+<div class="access" id="datapubl"><b>public:</b>
+<table class="data" id="tabdatapubl" cellspacing="0">
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::(unnamed)</td><td class="dataname"><a href="#TObject:kBitMask"><span class="baseclass">TObject::</span>kBitMask</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::EStatusBits</td><td class="dataname"><a href="#TObject:kCanDelete"><span class="baseclass">TObject::</span>kCanDelete</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::EStatusBits</td><td class="dataname"><a href="#TObject:kCannotPick"><span class="baseclass">TObject::</span>kCannotPick</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::EStatusBits</td><td class="dataname"><a href="#TObject:kHasUUID"><span class="baseclass">TObject::</span>kHasUUID</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::(unnamed)</td><td class="dataname"><a href="#TObject:kInconsistent"><span class="baseclass">TObject::</span>kInconsistent</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::EStatusBits</td><td class="dataname"><a href="#TObject:kInvalidObject"><span class="baseclass">TObject::</span>kInvalidObject</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::(unnamed)</td><td class="dataname"><a href="#TObject:kIsOnHeap"><span class="baseclass">TObject::</span>kIsOnHeap</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::EStatusBits</td><td class="dataname"><a href="#TObject:kIsReferenced"><span class="baseclass">TObject::</span>kIsReferenced</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::EStatusBits</td><td class="dataname"><a href="#TObject:kMustCleanup"><span class="baseclass">TObject::</span>kMustCleanup</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::EStatusBits</td><td class="dataname"><a href="#TObject:kNoContextMenu"><span class="baseclass">TObject::</span>kNoContextMenu</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::(unnamed)</td><td class="dataname"><a href="#TObject:kNotDeleted"><span class="baseclass">TObject::</span>kNotDeleted</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::EDeprecatedStatusBits</td><td class="dataname"><a href="#TObject:kObjInCanvas"><span class="baseclass">TObject::</span>kObjInCanvas</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::(unnamed)</td><td class="dataname"><a href="#TObject:kOverwrite"><span class="baseclass">TObject::</span>kOverwrite</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::(unnamed)</td><td class="dataname"><a href="#TObject:kSingleKey"><span class="baseclass">TObject::</span>kSingleKey</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::(unnamed)</td><td class="dataname"><a href="#TObject:kWriteDelete"><span class="baseclass">TObject::</span>kWriteDelete</a></td><td></td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::(unnamed)</td><td class="dataname"><a href="#TObject:kZombie"><span class="baseclass">TObject::</span>kZombie</a></td><td></td></tr>
 
 </table></div>
 <div class="access" id="dataprot"><b>protected:</b>
@@ -304,6 +312,7 @@ return false;}
 <tr class="datainh"><td class="datatype"><a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="dataname"><a href="./TGenBase.html#TGenBase:fxb"><span class="baseclass">TGenBase::</span>fxb</a></td><td class="datadesc">xb for the event</td></tr>
 <tr class="datainh"><td class="datatype"><a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="dataname"><a href="./TGenBase.html#TGenBase:fxbmax"><span class="baseclass">TGenBase::</span>fxbmax</a></td><td class="datadesc">Maximum x_b for the event</td></tr>
 <tr class="datainh"><td class="datatype"><a href="./ListOfTypes.html#Double_t">Double_t</a></td><td class="dataname"><a href="./TGenBase.html#TGenBase:fxbmin"><span class="baseclass">TGenBase::</span>fxbmin</a></td><td class="datadesc">Minimum x_b for the event</td></tr>
+<tr class="datainh"><td class="datatype">static <a href="./#TObject:TObject" title="TObject TObject::TObject() or overloads">TObject</a>::(unnamed)</td><td class="dataname"><a href="#TObject:kOnlyPrepStep"><span class="baseclass">TObject::</span>kOnlyPrepStep</a></td><td></td></tr>
 <tr class="datainh"><td class="datatype"><a href="./ListOfTypes.html#ofstream">ofstream</a>*</td><td class="dataname"><a href="./TGenBase.html#TGenBase:output"><span class="baseclass">TGenBase::</span>output</a></td><td class="datadesc">! Temporary output file</td></tr>
 
 </table></div>
@@ -318,29 +327,29 @@ return false;}
 </div>
 <h2><a id="TGenElas:Class_Charts"></a>Class Charts</h2>
 <map name="MapTGenElas_Inh" id="MapTGenElas_Inh">
-<area shape="rect" id="node3" href="./TGenBase.html" title="TGenBase" alt="" coords="419,7,558,35"/>
-<area shape="rect" id="node4" href="./TGenGeo.html" title="TGenGeo" alt="" coords="210,7,349,35"/>
+<area shape="rect" id="node2" href="./TGenBase.html" title="TGenBase" alt="" coords="418,7,557,33"/>
+<area shape="rect" id="node3" href="./TGenGeo.html" title="TGenGeo" alt="" coords="210,7,349,33"/>
 </map>
 <map name="MapTGenElas_InhMem" id="MapTGenElas_InhMem">
-<area shape="rect" id="graph12" href="./TGenBase.html" alt="" coords="859,63,947,201"/>
-<area shape="rect" id="graph13" href="./TGenBase.html" alt="" coords="760,63,848,201"/>
-<area shape="rect" id="graph14" href="./TGenBase.html" alt="" coords="661,63,749,201"/>
-<area shape="rect" id="graph15" href="./TGenBase.html" alt="" coords="891,212,915,233"/>
-<area shape="rect" id="graph16" href="./TGenBase.html" alt="" coords="859,244,947,455"/>
-<area shape="rect" id="graph17" href="./TGenBase.html" alt="" coords="760,215,848,455"/>
-<area shape="rect" id="graph18" href="./TGenBase.html" alt="" coords="661,215,749,455"/>
-<area shape="rect" id="graph11" href="./TGenBase.html" title="TGenBase" alt="" coords="651,16,957,465"/>
-<area shape="rect" id="graph21" href="./TGenGeo.html" alt="" coords="541,63,629,201"/>
-<area shape="rect" id="graph22" href="./TGenGeo.html" alt="" coords="443,63,531,201"/>
-<area shape="rect" id="graph23" href="./TGenGeo.html" alt="" coords="344,63,432,201"/>
-<area shape="rect" id="graph24" href="./TGenGeo.html" alt="" coords="573,212,597,233"/>
-<area shape="rect" id="graph25" href="./TGenGeo.html" alt="" coords="541,244,629,455"/>
-<area shape="rect" id="graph26" href="./TGenGeo.html" alt="" coords="443,215,531,455"/>
-<area shape="rect" id="graph27" href="./TGenGeo.html" alt="" coords="344,215,432,455"/>
-<area shape="rect" id="graph20" href="./TGenGeo.html" title="TGenGeo" alt="" coords="333,16,640,465"/>
+<area shape="rect" id="clust11" href="./TGenBase.html" alt="" coords="635,47,701,177"/>
+<area shape="rect" id="clust12" href="./TGenBase.html" alt="" coords="557,47,624,177"/>
+<area shape="rect" id="clust13" href="./TGenBase.html" alt="" coords="480,47,547,177"/>
+<area shape="rect" id="clust14" href="./TGenBase.html" alt="" coords="667,177,669,180"/>
+<area shape="rect" id="clust15" href="./TGenBase.html" alt="" coords="635,180,701,404"/>
+<area shape="rect" id="clust16" href="./TGenBase.html" alt="" coords="557,177,624,417"/>
+<area shape="rect" id="clust17" href="./TGenBase.html" alt="" coords="480,177,547,417"/>
+<area shape="rect" id="clust10" href="./TGenBase.html" title="TGenBase" alt="" coords="480,16,701,417"/>
+<area shape="rect" id="clust20" href="./TGenGeo.html" alt="" coords="403,47,469,177"/>
+<area shape="rect" id="clust21" href="./TGenGeo.html" alt="" coords="325,47,392,177"/>
+<area shape="rect" id="clust22" href="./TGenGeo.html" alt="" coords="248,47,315,177"/>
+<area shape="rect" id="clust23" href="./TGenGeo.html" alt="" coords="435,177,437,180"/>
+<area shape="rect" id="clust24" href="./TGenGeo.html" alt="" coords="403,180,469,420"/>
+<area shape="rect" id="clust25" href="./TGenGeo.html" alt="" coords="325,180,392,420"/>
+<area shape="rect" id="clust26" href="./TGenGeo.html" alt="" coords="248,180,315,420"/>
+<area shape="rect" id="clust19" href="./TGenGeo.html" title="TGenGeo" alt="" coords="248,16,469,420"/>
 </map>
 <map name="MapTGenElas_Lib" id="MapTGenElas_Lib">
-<area shape="rect" id="node1" href="LibraryDependencies.html" title="All Libraries" alt="" coords="140,240,255,288"/>
+<area shape="rect" id="node1" href="LibraryDependencies.html" title="All Libraries" alt="" coords="155,237,286,285"/>
 </map>
 <div class="tabs">
 <a id="imgTGenElas_Inh" class="tabsel" href="inh/TGenElas_Inh.png" onclick="javascript:return SetImg('Charts','inh/TGenElas_Inh.png');">Inheritance</a>
@@ -356,8 +365,8 @@ return false;}
 </pre></div>
 </div>
 <div class="funcdoc"><span class="funcname"> <a class="funcname" name="TGenElas:TGenElas@1" href="src/TGenElas.cxx.html#YjxfRB">TGenElas</a>(<span class="keyword">const</span> <a href="./TGenElas.html">TGenElas</a>&amp; )</span><br />
-<div class="funccomm"><pre> <a href="./#TObject:Copy" title="void TObject::Copy(TObject&amp; object)">Copy</a> constructor
-  ((<a href="./TGenElas.html">TGenElas</a>&amp;)TCalobase).<a href="./#TObject:Copy" title="void TObject::Copy(TObject&amp; object)">Copy</a>(*this);
+<div class="funccomm"><pre> <a href="./#TObject:Copy" title="void TObject::Copy(TObject&amp; object) const">Copy</a> constructor
+  ((<a href="./TGenElas.html">TGenElas</a>&amp;)TCalobase).<a href="./#TObject:Copy" title="void TObject::Copy(TObject&amp; object) const">Copy</a>(*this);
 </pre></div>
 </div>
 <div class="funcdoc"><span class="funcname"> <a class="funcname" name="TGenElas:_TGenElas" href="src/TGenElas.cxx.html#DegdlC">~TGenElas</a>()</span><br />
@@ -465,7 +474,7 @@ the running time, do as in the example at test/macroelas.C
 <!--SIGNATURE-->
 <div id="footer">
 
-<em>&raquo; Last changed: Thu Aug 21 15:09:56 2014 </em><em>&raquo; Last generated: 2014-08-21 15:09</em><br />
+<em>&raquo; Last changed: Wed Jan 22 13:35:54 2025 </em><em>&raquo; Last generated: 2025-01-22 13:35</em><br />
 <em>This page has been automatically generated. For comments or suggestions regarding the documentation or ROOT in general please send a mail to <a href="mailto:rootdev@cern.ch">ROOT support</a>.</em>
 </div>
 </div>

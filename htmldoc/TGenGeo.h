@@ -68,6 +68,7 @@ class TGenGeo : public TObject
 
   Double_t PX0(void);
   Double_t NX0(void);
+  Double_t AlX0(void);
 
   void SetTargetParam(Double_t targlength, Double_t targzoffset, Double_t targden);
   void SetTargetParam(Double_t targlength, Double_t targden);

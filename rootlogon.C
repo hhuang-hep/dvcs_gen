@@ -1,18 +1,11 @@
 {
- 
- 
-//gSystem.Load("/afs/in2p3.fr/home/throng/clas/carlos/theory/LIB/libmydvcs.so");
+    cout<<"rootlogon.C in the Hao's directory has been loaded"<<endl;
+    
+    char *inc_nps_soft = gSystem->ExpandPathName("/group/nps/hhuang/software/NPS_SOFT");
+    gInterpreter->AddIncludePath(inc_nps_soft);
+    delete [] inc_nps_soft;
 
- gSystem->Load("libTGenGeo.so");
- gSystem->Load("libTGenBase.so");
- gSystem->Load("libTGenDVCS.so");
- gSystem->Load("libTGVKelly.so");
- gSystem->Load("libTGenDeltPi0.so");
- gSystem->Load("libTGenElas.so");
- gSystem->Load("libTGenOme.so");
- gSystem->Load("libTGenPi0.so");
- gSystem->Load("libTGenPip.so");
- gSystem->Load("libTGenRho.so");
-
- gROOT->SetStyle("Plain");
+    char *inc_dvcs_soft = gSystem->ExpandPathName("/group/nps/hhuang/software/dvcs_gen");
+    gInterpreter->AddIncludePath(inc_dvcs_soft);
+    delete [] inc_dvcs_soft;
 }

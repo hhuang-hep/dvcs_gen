@@ -1,0 +1,12 @@
+;;Hao 2025/02/27
+;;This is the DVCS generator from /work/hallc/nps/hosan/dvcs_gen
+;;Modified for the 2023-2024 NPS experiment in Hall C at JLab
+================================================================
+1. I modified the Makefile so we are able to compile on the ifarm9 system
+2. TGenBase class
+    - ExtBrem(void): added the external energy correction for the entrance of target cess
+    - GenerateVertex(void): added different ways to generate the vertex to include the rasters, beam offset and beam width (Hao@2025/02/27: the beam width seems not helpful to the simulation)
+3. TGenGeo class
+    - SetDefaultAcceptances(void): increased the geometry and momentum acceptance by 20% and 2%
+    - PX0(void) and NX0(void): modified the radiation length of LH2 and LD2 based on the PDG2024: https://pdg.lbl.gov/2024/AtomicNuclearProperties/
+    - AlX0(void): new function added for the radiation length of target cell wall

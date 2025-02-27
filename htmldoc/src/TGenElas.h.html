@@ -4,7 +4,7 @@
 <!--                                             -->
 <!-- Author: ROOT team (rootdev@cern.ch)         -->
 <!--                                             -->
-<!--   Date: Thu Aug 21 15:09:56 2014            -->
+<!--   Date: Wed Jan 22 13:35:54 2025            -->
 <!--                                             -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
@@ -17,7 +17,7 @@
 <script type="text/javascript" src="../ROOT.js"></script>
 </head>
 <body  onload="javascript:SetValuesFromCookie();"><div id="body_content">
-<div id="root_header"><img src="http://root.cern.ch/drupal/sites/default/files/rootdrawing-logo.png" alt="ROOT logo"/></div>
+<div id="root_header"></div>
 <div id="codeAndLineNumbers"><pre class="listing">
 <span class="comment">//</span>
 <span class="comment">// <a href="../TGenElas.html">TGenElas</a>.h, v1.0, Tue Aug 4 11:13:57</span>
@@ -59,23 +59,23 @@
   <a href="../TGenElas.html">TGenElas</a>(<span class="keyword">const</span> <a href="../TGenElas.html">TGenElas</a>&amp;);
   <span class="keyword">virtual</span> <a href="../TGenElas.html#TGenElas:_TGenElas" title="void TGenElas::~TGenElas()">~TGenElas</a>();
 
-  <span class="keyword">virtual</span> <span class="keyword">void</span> <a href="../TGenElas.html#TGenElas:Print" title="void TGenElas::Print(char* opt=&quot;&quot;)">Print</a>(<span class="keyword">char</span>* opt=<span class="string">""</span>);
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a href="../TGenElas.html#TGenElas:Print" title="void TGenElas::Print(char* opt = &quot;&quot;)">Print</a>(<span class="keyword">char</span>* opt=<span class="string">""</span>);
   <span class="keyword">void</span> <a href="../TGenElas.html#TGenElas:IntRCBef" title="void TGenElas::IntRCBef()">IntRCBef</a>(<span class="keyword">void</span>);
   <span class="keyword">void</span> <a href="../TGenElas.html#TGenElas:IntRCAft" title="void TGenElas::IntRCAft()">IntRCAft</a>(<span class="keyword">void</span>);
   <span class="keyword">void</span> <a href="../TGenElas.html#TGenElas:ComputeElas" title="void TGenElas::ComputeElas()">ComputeElas</a>(<span class="keyword">void</span>);
-  <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:KellyE" title="Double_t TGenElas::KellyE(Double_t )">KellyE</a>(<a href="../ListOfTypes.html#Double_t">Double_t</a>);
-  <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:KellyM" title="Double_t TGenElas::KellyM(Double_t )">KellyM</a>(<a href="../ListOfTypes.html#Double_t">Double_t</a>);
-  <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:ArringE" title="Double_t TGenElas::ArringE(Double_t )">ArringE</a>(<a href="../ListOfTypes.html#Double_t">Double_t</a>);
-  <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:ArringM" title="Double_t TGenElas::ArringM(Double_t )">ArringM</a>(<a href="../ListOfTypes.html#Double_t">Double_t</a>);
+  <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:KellyE" title="Double_t TGenElas::KellyE(Double_t)">KellyE</a>(<a href="../ListOfTypes.html#Double_t">Double_t</a>);
+  <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:KellyM" title="Double_t TGenElas::KellyM(Double_t)">KellyM</a>(<a href="../ListOfTypes.html#Double_t">Double_t</a>);
+  <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:ArringE" title="Double_t TGenElas::ArringE(Double_t)">ArringE</a>(<a href="../ListOfTypes.html#Double_t">Double_t</a>);
+  <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:ArringM" title="Double_t TGenElas::ArringM(Double_t)">ArringM</a>(<a href="../ListOfTypes.html#Double_t">Double_t</a>);
   <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:XSec" title="Double_t TGenElas::XSec()">XSec</a>(<span class="keyword">void</span>);
   <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:XSecKelly" title="Double_t TGenElas::XSecKelly()">XSecKelly</a>(<span class="keyword">void</span>);
   <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:XSecArrington" title="Double_t TGenElas::XSecArrington()">XSecArrington</a>(<span class="keyword">void</span>);
-  <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:XSecTotal" title="Double_t TGenElas::XSecTotal(Int_t steps=1000)">XSecTotal</a>(<a href="../ListOfTypes.html#Int_t">Int_t</a> steps=1000);
+  <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:XSecTotal" title="Double_t TGenElas::XSecTotal(Int_t steps = 1000)">XSecTotal</a>(<a href="../ListOfTypes.html#Int_t">Int_t</a> steps=1000);
   <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:XSecMax" title="Double_t TGenElas::XSecMax()">XSecMax</a>(<span class="keyword">void</span>);
   <span class="keyword">void</span> <a href="../TGenElas.html#TGenElas:GenKin" title="void TGenElas::GenKin()">GenKin</a>(<span class="keyword">void</span>);
   <span class="comment">//  <a href="../ListOfTypes.html#void">void</a> ComputeDVCS(<a href="../ListOfTypes.html#void">void</a>);</span>
   <span class="comment">//  <a href="../ListOfTypes.html#void">void</a> Compute2Body(<a href="../ListOfTypes.html#Double_t">Double_t</a> m);</span>
-  <span class="keyword">void</span> <a href="../TGenElas.html#TGenElas:ApplySpecVerAcc" title="void TGenElas::ApplySpecVerAcc(Double_t aav=-1.)">ApplySpecVerAcc</a>(<a href="../ListOfTypes.html#Double_t">Double_t</a> aav=-1.);
+  <span class="keyword">void</span> <a href="../TGenElas.html#TGenElas:ApplySpecVerAcc" title="void TGenElas::ApplySpecVerAcc(Double_t aav = -1.)">ApplySpecVerAcc</a>(<a href="../ListOfTypes.html#Double_t">Double_t</a> aav=-1.);
 <a name="GJg2R"></a>  <a href="../ListOfTypes.html#Double_t">Double_t</a> <a href="../TGenElas.html#TGenElas:GetPSF" title="Double_t TGenElas::GetPSF()">GetPSF</a>(<span class="keyword">void</span>) { <span class="keyword">return</span> <a href="../TGenElas.html#TGenElas:fPSF" title="Double_t TGenElas::fPSF">fPSF</a> ; }
   TLorentzVector* <a href="../TGenElas.html#TGenElas:GetFinalProton" title="TLorentzVector* TGenElas::GetFinalProton()">GetFinalProton</a>(<span class="keyword">void</span>);
   <span class="keyword">void</span> <a href="../TGenElas.html#TGenElas:Write2File" title="void TGenElas::Write2File()">Write2File</a>(<span class="keyword">void</span>);
@@ -92,7 +92,7 @@
 <!--SIGNATURE-->
 <div id="footer">
 
-<em>&raquo; Last changed: 2014-08-21 15:09 </em><em>&raquo; Last generated: 2014-08-21 15:09</em><br />
+<em>&raquo; Last changed: 2025-01-22 13:35 </em><em>&raquo; Last generated: 2025-01-22 13:35</em><br />
 <em>This page has been automatically generated. For comments or suggestions regarding the documentation or ROOT in general please send a mail to <a href="mailto:rootdev@cern.ch">ROOT support</a>.</em>
 </div>
 </div>
