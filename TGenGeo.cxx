@@ -151,10 +151,11 @@ void TGenGeo::SetDefaultAcceptances(void)
 
   // Sets default acceptances for the spectrometer, calorimeter and
   // proton array
- 
-  Double_t x = 2.*4.759;//From jones@jlab.org to carlos & hosanko@ipno.in2p3.fr
-  Double_t y = 2.*12.114;
-  Double_t dist = 116.37;
+  
+  //x, y and dist are from jones@jlab.org to carlos & hosanko@ipno.in2p3.fr
+  Double_t x = 2.*4.759; // HMS collimator exit window 
+  Double_t y = 2.*12.114; //  HMS collimator exit window
+  Double_t dist = 166.37; // distance from the center of the target to the collimator
   Double_t diag = TMath::Sqrt(x*x + y*y);
   Double_t theta_x = TMath::ATan2(0.5*diag, dist);
   Double_t theta_y = TMath::ATan2(0.5*diag, dist);
@@ -179,9 +180,10 @@ void TGenGeo::SetDefaultAcceptances(void)
   // Sets default acceptances for the spectrometer, calorimeter and
   // proton array
 
-  Double_t x = 1.1*4.759;//From jones@jlab.org to carlos & hosanko@ipno.in2p3.fr
-  Double_t y = 1.1*12.114;
-  Double_t dist = 116.37;
+  //x, y and dist are from jones@jlab.org to carlos & hosanko@ipno.in2p3.fr
+  Double_t x = 1.1*4.759; // HMS collimator exit window
+  Double_t y = 1.1*12.114; //  HMS collimator exit window
+  Double_t dist = 166.37; // distance from the center of the target to the collimator
   Double_t diag = TMath::Sqrt(x*x + y*y);
   Double_t theta_x = TMath::ATan2(0.5*diag, dist);
   Double_t theta_y = TMath::ATan2(0.5*diag, dist);
