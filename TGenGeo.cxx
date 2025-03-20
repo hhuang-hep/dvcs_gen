@@ -162,7 +162,10 @@ void TGenGeo::SetDefaultAcceptances(void)
   // SetSpectroAcceptance(theta_x, theta_y, 0.1); //exact size. Mom_acceptance +-10%
   // SetSpectroAcceptance(0.5*theta_x, 0.5*theta_y, 0.1); //0.5* is to be tighter. Mom_acceptance +-10%
   // SetSpectroAcceptance(1.1*theta_x, 1.1*theta_y, 0.1); //1.1* is to be generous. Mom_acceptance +-10%
-  SetSpectroAcceptance(1.3*theta_x, 1.3*theta_y, 0.13); //1.3* is to be generous. Mom_acceptance +-13% // by Hao
+
+  // 20250319 by Charles: 1.1*theta_x should be enough. 1.3*theta_y, aka vertical acceptance, depends on the HMS angle
+  SetSpectroAcceptance(1.1*theta_x, 1.3*theta_y, 0.13); //1.3* is to be generous. Mom_acceptance +-13% // by Hao  
+
   // In geant4.
   // Crystal x,y = 20.5mm, carbon gap = 1mm, VM2000 =65e-3mm. 30X36
   // SetCaloAcceptance(324.45, 324.45, 389.34, 389.34);//exact size.
@@ -181,16 +184,18 @@ void TGenGeo::SetDefaultAcceptances(void)
   // proton array
 
   //x, y and dist are from jones@jlab.org to carlos & hosanko@ipno.in2p3.fr
-  Double_t x = 1.1*4.759; // HMS collimator exit window
-  Double_t y = 1.1*12.114; //  HMS collimator exit window
+  Double_t x = 2.*4.759; // HMS collimator exit window
+  Double_t y = 2.*12.114; //  HMS collimator exit window
   Double_t dist = 166.37; // distance from the center of the target to the collimator
   Double_t diag = TMath::Sqrt(x*x + y*y);
   Double_t theta_x = TMath::ATan2(0.5*diag, dist);
   Double_t theta_y = TMath::ATan2(0.5*diag, dist);
   // SetSpectroAcceptanceGen(theta_x, theta_y, 0.1); //exact size. Mom_acceptance +-10%
   // SetSpectroAcceptanceGen(0.5*theta_x, 0.5*theta_y, 0.1); //0.5* is to be tighter. Mom_acceptance +-10%
-  SetSpectroAcceptanceGen(1.1*theta_x, 1.1*theta_y, 0.1); //1.1* is to be generous. Mom_acceptance +-10%
-  // SetSpectroAcceptanceGen(3.*theta_x, 3.*theta_y, 0.5); //2.* is to be generous. Mom_acceptance +-50% // by Hao
+  // SetSpectroAcceptanceGen(1.1*theta_x, 1.1*theta_y, 0.1); //1.1* is to be generous. Mom_acceptance +-10%
+
+  // 20250319 by Charles: 1.1*theta_x should be enough. 1.3*theta_y, aka vertical acceptance, depends on the HMS angle
+  SetSpectroAcceptanceGen(1.1*theta_x, 1.3*theta_y, 0.13); //1.3* is to be generous. Mom_acceptance +-13% // by Hao
 
 
 }
@@ -243,9 +248,7 @@ void TGenGeo::SetDefaultAcceptances(void)
   Double_t Phie=-TMath::ATan2(e->Py(),Pe);// To change electron from the left side to the right side of the beam-line (beam direction perspective)
   //20190412(finish)
 
-  if(Pe>pemin && Pe<pemax && Thetae>thetaemin && Thetae<thetaemax &&
-     Phie>-fSpecVerAcc && Phie<fSpecVerAcc) {
-      // if(TMath::Abs(Pe-fSpecMom)/fSpecMom > 0.1) cout<<"found dp > 10%"<<endl; // check after increasing acceptance
+  if(Pe>pemin && Pe<pemax && Thetae>thetaemin && Thetae<thetaemax && Phie>-fSpecVerAcc && Phie<fSpecVerAcc) {
     return kTRUE;
   }else{
     return kFALSE;
