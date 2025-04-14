@@ -199,9 +199,11 @@ Bool_t           TGenBase::fgErrors = kTRUE;
   Double_t pemax=fSpecMom*(1+fSpecMomAccGen);
   Double_t pemin=fSpecMom*(1-fSpecMomAccGen);
 
-   pemin=fSpecMom*(1-fSpecMomAccGen);
-
-   pemax+=1.5*0.135;//increase higher momentum to account for radiation
+  // We set fSpecMomAccGen = 40% of the higher limit of momentum acceptance
+  // but 15% of the momentum acceptance should be enough for the lower limit
+  pemin=fSpecMom*(1-0.15); 
+  //  pemin=fSpecMom*(1-fSpecMomAccGen); // if we want symmatric limits for lower limit
+  //  pemax+=1.5*0.135;// someone added to increase higher momentum to account for radiation, but we already did when setting the acceptance
 
  
   //cout<<"th_min="<<thetaemin<<"  th_max="<<thetaemax<<

@@ -159,12 +159,15 @@ void TGenGeo::SetDefaultAcceptances(void)
   Double_t diag = TMath::Sqrt(x*x + y*y);
   Double_t theta_x = TMath::ATan2(0.5*diag, dist);
   Double_t theta_y = TMath::ATan2(0.5*diag, dist);
-  // SetSpectroAcceptance(theta_x, theta_y, 0.1); //exact size. Mom_acceptance +-10%
-  // SetSpectroAcceptance(0.5*theta_x, 0.5*theta_y, 0.1); //0.5* is to be tighter. Mom_acceptance +-10%
-  // SetSpectroAcceptance(1.1*theta_x, 1.1*theta_y, 0.1); //1.1* is to be generous. Mom_acceptance +-10%
 
-  // 20250319 by Charles: 1.1*theta_x should be enough. 1.3*theta_y, aka vertical acceptance, depends on the HMS angle
-  SetSpectroAcceptance(1.1*theta_x, 1.3*theta_y, 0.13); //1.3* is to be generous. Mom_acceptance +-13% // by Hao  
+  // SpectroAcceptance for 2023-2024 DVCS-NPS experiment in Hall C
+  // theta_y term is not used for spectrometer acceptance check
+  // phi acceptance is calculated in TDVCS::ApplySpecVerAcc() and set up fSpecVerAcc for HitSpectro()
+  // I20% of energy loss when we had a 15% of momentum acceptance
+  // The momentum acceptance should be at least 35% to account for all the elections. Additional 5% to be generous
+  // This 40% of momentum acceptance is only used for pemax in TGenKin. The pemin is set to be 15% there
+  theta_x = TMath::ATan2(x, dist); // The horizontal acceptance don't have to be that large. 2*width of the collimator is enough
+  SetSpectroAcceptance(1.1*theta_x, 1.1*theta_y, 0.4); //1.1* is to be generous. Mom_acceptance +-40%
 
   // In geant4.
   // Crystal x,y = 20.5mm, carbon gap = 1mm, VM2000 =65e-3mm. 30X36
@@ -183,19 +186,25 @@ void TGenGeo::SetDefaultAcceptances(void)
   // Sets default acceptances for the spectrometer, calorimeter and
   // proton array
 
-  //x, y and dist are from jones@jlab.org to carlos & hosanko@ipno.in2p3.fr
-  Double_t x = 2.*4.759; // HMS collimator exit window
-  Double_t y = 2.*12.114; //  HMS collimator exit window
+  // x, y and dist are from jones@jlab.org to carlos & hosanko@ipno.in2p3.fr
+  // If you change things here, make sure the TGenDVCS::ApplySpecVerAcc is modified as well 
+  // to keep the same geometry for phi acceptance calculation
+
+  Double_t x = 1.1*2.*4.759; // HMS collimator exit window, Set a bit larger than the actual size in SetDefaultAcceptances()
+  Double_t y = 1.1*2.*12.114; //  HMS collimator exit window, Set a bit larger than the actual size in SetDefaultAcceptances()
   Double_t dist = 166.37; // distance from the center of the target to the collimator
   Double_t diag = TMath::Sqrt(x*x + y*y);
   Double_t theta_x = TMath::ATan2(0.5*diag, dist);
   Double_t theta_y = TMath::ATan2(0.5*diag, dist);
-  // SetSpectroAcceptanceGen(theta_x, theta_y, 0.1); //exact size. Mom_acceptance +-10%
-  // SetSpectroAcceptanceGen(0.5*theta_x, 0.5*theta_y, 0.1); //0.5* is to be tighter. Mom_acceptance +-10%
-  // SetSpectroAcceptanceGen(1.1*theta_x, 1.1*theta_y, 0.1); //1.1* is to be generous. Mom_acceptance +-10%
 
-  // 20250319 by Charles: 1.1*theta_x should be enough. 1.3*theta_y, aka vertical acceptance, depends on the HMS angle
-  SetSpectroAcceptanceGen(1.1*theta_x, 1.3*theta_y, 0.13); //1.3* is to be generous. Mom_acceptance +-13% // by Hao
+  // SpectroAcceptance for 2023-2024 DVCS-NPS experiment in Hall C
+  // theta_y term is not used in TGenKin for event generation
+  // phi acceptance is calculated in TDVCS::ApplySpecVerAcc()
+  // 20% of energy loss when we had a 15% of momentum acceptance
+  // The momentum acceptance should be at least 35% to account for all the elections. Additional 5% to be generous
+  // This 40% of momentum acceptance is only used for pemax in TGenKin. The pemin is set to be 15% there
+  theta_x = TMath::ATan2(x, dist); // The horizontal acceptance don't have to be that large. 2*width of the collimator is enough
+  SetSpectroAcceptanceGen(1.1*theta_x, 1.1*theta_y, 0.4); //1.1* is to be generous. Mom_acceptance +-40%
 
 
 }

@@ -504,7 +504,17 @@ void TGenDVCS::ApplySpecVerAcc(Double_t aav)
   // around the beam axis. An angle can be specified, otherwise it's generated
   // randomly between spectrometer acceptances
 
-  const Double_t fSpecPhiAcc = fSpecVerAcc/TMath::Sin(fSpecAngle-fSpecHorAcc);
+  // Calculate fSpecPhiAcc with Charles's suggestion: eq.11 in https://hallcweb.jlab.org/elogs/NPS-RG1a-Analysis/98
+  Double_t V = 1.1*12.114; // half of vertical size of the HMS collimator exit window, 1.1 to be generous
+  Double_t H = 1.1*4.759; // half of horizontal size of the HMS collimator exit window, 1.1 to be generous
+  Double_t dist = 166.37; // distance from the center of the target to the collimator
+  Double_t xx = -1*dist*TMath::Sin(fSpecAngle)+H*TMath::Cos(fSpecAngle); // the shortest distance from the collimator to the beam axis (xB in the eq.11)
+  Double_t fSpecPhiAcc_max = 2*TMath::Pi()+TMath::ATan2(-1*V, xx); // the maximum angle of the phi acceptance
+  Double_t fSpecPhiAcc_min = TMath::ATan2(V, xx); // the minimum angle of the phi acceptance
+  const Double_t fSpecPhiAcc = 0.5*(fSpecPhiAcc_max - fSpecPhiAcc_min); // the phi acceptance
+  fSpecVerAcc = fSpecPhiAcc; // set the vertical acceptance to be the same as the phi acceptance
+  // const Double_t fSpecPhiAcc = fSpecVerAcc/TMath::Sin(fSpecAngle-fSpecHorAcc); // previous version
+
   Double_t av=aav;
   if(aav==-1.) {
     av=-fSpecPhiAcc+2.*fSpecPhiAcc*fRan->Rndm();
