@@ -349,10 +349,13 @@ void TGenDVCS::Compute2Body(Double_t m)
 
   Double_t q0primemax=0.5*fQ2*(1.-fxb)/(fxb*(fm+nu-q3));
   Double_t q0primemin=0.5*fQ2*(1.-fxb)/(fxb*(fm+nu+q3));
-  Double_t tmax=-fQ2-2.*q0primemax*(nu-q3);
-  Double_t tmin=-fQ2-2.*q0primemin*(nu+q3);
+  Double_t tmax=-fQ2-2.*q0primemax*(nu-q3); // acturally, this is tmin (smaller abs(t))
+  Double_t tmin=-fQ2-2.*q0primemin*(nu+q3); // acturally, this is tmax (larger abs(t))
   ftmax=TMath::Min(ftmax,tmax);
   ftmin=TMath::Max(ftmin,tmin);
+
+  // cout<<"ftmin = "<<ftmin<<"; "<<"tmin = "<<tmin<<endl;
+  // cout<<"ftmax = "<<ftmax<<"; "<<"tmax = "<<tmax<<endl;
   
   if(fFermi) ftmax=0;
   do {
