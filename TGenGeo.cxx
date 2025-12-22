@@ -170,7 +170,7 @@ void TGenGeo::SetDefaultAcceptances(void)
   SetSpectroAcceptance(1.1*theta_x, 1.1*theta_y, 0.4); //1.1* is to be generous. Mom_acceptance +-40%
 
   // In geant4.
-  // Crystal x,y = 20.5mm, carbon gap = 1mm, VM2000 =65e-3mm. 30X36
+  // Crystal x,y = 20.5mm, carbon gap = 1.1mm, VM2000 =65e-3mm. 30X36
   // SetCaloAcceptance(324.45, 324.45, 389.34, 389.34);//exact size.
   // SetCaloAcceptance(0.2*324.45, 0.2*324.45, 0.2*389.34, 0.2*389.34);//tighter size
   SetCaloAcceptance(1.1*324.45, 1.1*324.45, 1.1*389.34, 1.1*389.34);//generous size  
