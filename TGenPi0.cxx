@@ -281,7 +281,7 @@ void TGenPi0::IntRCAft(void)
   // and then rotate everything by phi except
   // k and k'. Then we rotate back along Oy.
 
-  angle=(q.Vect()).Angle(oz);
+  angle=-(q.Vect()).Angle(oz);// To change electron from the left side to the right side of the beam-line (beam direction perspective)
 
   fp->RotateY(angle);
   fpi0->RotateY(angle);
